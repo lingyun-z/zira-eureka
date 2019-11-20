@@ -9,6 +9,6 @@ services:
     networks:
       - zira
 networks:
-  back:
+  zira:
     external:
       name: zira
