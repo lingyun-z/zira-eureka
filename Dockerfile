@@ -8,4 +8,4 @@ WORKDIR /app
 COPY --from=builder /usr/src/app/target/*.jar /app/app.jar
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-CMD ["java","-jar","app.jar"]
+CMD ["sh", "-c", "exec java -jar app.jar"]
