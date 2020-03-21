@@ -5,7 +5,7 @@ services:
     image: zira-eureka
     container_name: zira-eureka
     expose:
-      - "2333:80"
+      - "80:2333"
     networks:
       - zira
 networks:
