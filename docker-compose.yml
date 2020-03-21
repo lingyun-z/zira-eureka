@@ -5,7 +5,7 @@ services:
     image: zira-eureka
     container_name: zira-eureka
     ports:
-      - "80:2333"
+      - "2333:80"
     networks:
       - zira
 networks:
