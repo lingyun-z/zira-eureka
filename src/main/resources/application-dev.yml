@@ -10,10 +10,12 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://zira-eureka/eureka/
     enabled: true
 
 spring:
+  application:
+    name: zira-eureka
   profiles:
     active: dev
 

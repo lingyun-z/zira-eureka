@@ -1,10 +1,6 @@
 server:
   port: 8761
 
-spring:
-  profiles:
-    active: local
-
 eureka:
   instance:
     hostname: localhost
@@ -17,13 +13,18 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     enabled: true
 
+spring:
+  application:
+    name: zira-eureka
+  profiles:
+    active: local
+
 management:
   endpoints:
     web:
       exposure:
         include: ["health","beans","env","prometheus","info","metrics"]
       base-path: /
-  #      enabled-by-default: true
   endpoint:
     auditevents:
       enabled: true
