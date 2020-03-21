@@ -10,7 +10,7 @@ eureka:
 #    healthcheck:
 #      enabled: true
     serviceUrl:
-      defaultZone: http://zira-eureka/eureka/
+      defaultZone: http://zira-eureka/eureka
 #    enabled: true
 
 spring:
