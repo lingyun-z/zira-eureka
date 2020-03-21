@@ -4,8 +4,8 @@ services:
     restart: always
     image: zira-eureka
     container_name: zira-eureka
-    ports:
-      - "2333:80"
+    expose:
+      - "80"
     networks:
       - zira
 networks:
