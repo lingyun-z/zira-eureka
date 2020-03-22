@@ -9,7 +9,42 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    healthcheck:
+      enabled: true
+    enabled: true
 
 spring:
   profiles:
     active: dev
+  application:
+    name: zira-eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["health","beans","env","prometheus","info","metrics"]
+      base-path: /
+  #      enabled-by-default: true
+  endpoint:
+    auditevents:
+      enabled: true
+      cache:
+        time-to-live: 10s
+    beans:
+      enabled: true
+    conditions:
+      enabled: true
+    configprops:
+      enabled: true
+    prometheus:
+      enabled: true
+  metrics:
+    tags:
+      application:
+        ${spring:application:name}
+    export:
+      prometheus:
+        pushgateway:
+          base-url: 139.196.28.92:9091
+          enabled: true
